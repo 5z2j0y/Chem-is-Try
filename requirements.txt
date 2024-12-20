@@ -1,0 +1,7 @@
+mediapipe
+mediapipe-model-maker
+tensorflow
+opencv-python
+ultralytics
+Pillow
+matplotlib

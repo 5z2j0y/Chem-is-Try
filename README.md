@@ -19,4 +19,8 @@ Chem-is-Try 是一个开源项目，旨在通过创新的技术和工具，使�
 1. 克隆仓库：
    ```bash
    git clone https://github.com/5z2j0y/Chem-is-Try.git
+   ```
+
+> **注意**: 如果电脑无法安装 mediapipe_model_maker，请在 [Kaggle](https://www.kaggle.com/code/codingbearhsun/chem-is-try/) 上运行object_detection\mediapipe_train.py代码。
+
 *编不下去了 咕咕咕*

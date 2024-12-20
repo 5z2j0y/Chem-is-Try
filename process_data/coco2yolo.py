@@ -37,3 +37,5 @@ if __name__ == "__main__":
     images_dir = r'process_data\test\images'
     labels_dir = r'process_data\test\yolo_labels'
     coco_to_yolo(json_path, images_dir, labels_dir)
+
+    
