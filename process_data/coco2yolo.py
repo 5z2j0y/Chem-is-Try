@@ -1,6 +1,7 @@
 import json
 import os
 from PIL import Image
+from tqdm import tqdm  # 添加进度条库
 
 def coco_to_yolo(json_path, images_dir, labels_dir):
     with open(json_path, 'r') as f:
@@ -11,7 +12,7 @@ def coco_to_yolo(json_path, images_dir, labels_dir):
     if not os.path.exists(labels_dir):
         os.makedirs(labels_dir)
 
-    for image in data['images']:
+    for image in tqdm(data['images'], desc="Processing images"):  # 添加进度条
         image_id = image['id']
         file_name = image['file_name']
         image_path = os.path.join(images_dir, file_name)
@@ -38,4 +39,4 @@ if __name__ == "__main__":
     labels_dir = r'process_data\test\yolo_labels'
     coco_to_yolo(json_path, images_dir, labels_dir)
 
-    
+
