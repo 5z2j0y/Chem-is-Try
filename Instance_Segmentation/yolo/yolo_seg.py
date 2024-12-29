@@ -2,8 +2,8 @@ import cv2
 from ultralytics import YOLO
 
 # 加载YOLO模型
-model = YOLO(r"models\yolo\examples\yolov11s-seg.pt")
-video_path = 0
+model = YOLO(r"models\yolo\examples\vessels-seg.pt")
+video_path = r"test.mp4"
 cap = cv2.VideoCapture(video_path)
 
 # 获取视频帧率
