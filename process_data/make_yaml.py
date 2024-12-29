@@ -9,7 +9,7 @@ label_map = {
 }
 
 # 指定图片和txt文件所在的文件夹
-data_folder = r'process_data\test\new_vessels'
+data_folder = r'process_data\test\trashcan'
 
 # 获取所有图片和txt文件
 images = [f for f in os.listdir(data_folder) if f.endswith('.jpg') or f.endswith('.png')]
