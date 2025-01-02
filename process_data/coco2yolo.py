@@ -31,12 +31,12 @@ def coco_to_yolo(json_path, images_dir, labels_dir):
                 y_center = (bbox[1] + bbox[3] / 2) / height
                 w = bbox[2] / width
                 h = bbox[3] / height
-                lf.write(f"{category_id} {x_center} {y_center} {w} {h}\n")
+                lf.write(f"{category_id-1} {x_center} {y_center} {w} {h}\n")
 
 if __name__ == "__main__":
-    json_path = r'process_data\test\valid\labels.json'
-    images_dir = r'process_data\test\valid\images'
-    labels_dir = r'process_data\test\valid\yolo_labels'
+    json_path = r'process_data\test\trash2\valid\labels.json'
+    images_dir = r'process_data\test\trash2\valid\images'
+    labels_dir = r'process_data\test\trash2\valid\yolo_labels'
     coco_to_yolo(json_path, images_dir, labels_dir)
 
 
