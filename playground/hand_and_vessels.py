@@ -19,7 +19,7 @@ options = vision.HandLandmarkerOptions(
 hand_detector = vision.HandLandmarker.create_from_options(options)
 
 # 初始化YOLO模型
-yolo_model = YOLO(r"models\yolo\examples\vessels-seg.pt")
+yolo_model = YOLO(r"models\yolo\examples\yolov11s-seg.pt")
 
 # 创建共享队列
 frame_queue = Queue(maxsize=2)
@@ -88,7 +88,7 @@ def main():
     seg_thread.start()
 
     # 打开摄像头
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     while cap.isOpened():
         ret, frame = cap.read()

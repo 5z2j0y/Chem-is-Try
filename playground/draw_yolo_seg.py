@@ -24,7 +24,12 @@ while cap.isOpened():
     
     for result in results:
         # 绘制结果
-        frame = result.plot()
+        # ultralytics自带的frame = result.plot()
+        masks = result.masks
+        for mask in masks:
+            for polygon in mask.xy:
+                pts = polygon.reshape(-1, 1, 2).astype(int)
+                cv2.polylines(frame, [pts], True, (0, 255, 0), 2)
             
     cv2.imshow('YOLO Segmentation', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):

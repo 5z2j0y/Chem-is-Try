@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import random
 
 # 加载模型
-model = YOLO(r"models\yolo\examples\yolov11s.pt")  # 加载官方模型
+model = YOLO(r"models\yolo\examples\yolov11s.pt", verbose=False)  # 加载官方模型
 # model = YOLO("path/to/best.pt")  # 加载自定义训练模型
 
 # 定义一个函数来生成随机颜色

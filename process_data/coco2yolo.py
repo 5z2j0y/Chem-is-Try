@@ -34,9 +34,7 @@ def coco_to_yolo(json_path, images_dir, labels_dir):
                 lf.write(f"{category_id-1} {x_center} {y_center} {w} {h}\n")
 
 if __name__ == "__main__":
-    json_path = r'process_data\test\trash2\valid\labels.json'
-    images_dir = r'process_data\test\trash2\valid\images'
-    labels_dir = r'process_data\test\trash2\valid\yolo_labels'
+    json_path = r'process_data\test\valid\labels.json'
+    images_dir = r'process_data\test\valid\images'
+    labels_dir = r'process_data\test\valid\yolo_labels'
     coco_to_yolo(json_path, images_dir, labels_dir)
-
-
