@@ -11,7 +11,7 @@ import logging
 from utils.draw_hand import draw_landmarks  # 导入新的绘制函数
 
 # 初始化手势检测器
-base_options = python.BaseOptions(model_asset_path=r'models\hand_landmark\hand_landmarker.task')
+base_options = python.BaseOptions(model_asset_path='models/hand_landmark/hand_landmarker.task')
 options = vision.HandLandmarkerOptions(
     base_options=base_options,
     num_hands=2,
@@ -21,7 +21,7 @@ options = vision.HandLandmarkerOptions(
 hand_detector = vision.HandLandmarker.create_from_options(options)
 logging.getLogger('ultralytics').setLevel(logging.ERROR)
 # 初始化YOLO模型
-yolo_model = YOLO(r"models\yolo\examples\yolov11s-seg.pt", verbose=False)
+yolo_model = YOLO("models/yolo/examples/yolo11s.pt", verbose=False)
 
 # 创建共享队列
 frame_queue = Queue(maxsize=2)
@@ -89,7 +89,7 @@ def main():
     cap = cv2.VideoCapture(0)
 
     class_names = []
-    with open(r"coco.names", "r", encoding="utf-8") as f:
+    with open("models/yolo/examples/coco.names", "r", encoding="utf-8") as f:
         class_names = [line.strip() for line in f]
 
     while cap.isOpened():

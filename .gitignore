@@ -4,3 +4,5 @@ datasets.zip
 datasets_vessel.zip
 temp.py
 runs/
+models/yolo/vessels-seg.pt
+models/mediapipe/vessels.tflite

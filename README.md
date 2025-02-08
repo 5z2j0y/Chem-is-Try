@@ -1,26 +1,123 @@
 # Chem-is-Try
 
-<img src="https://bkimg.cdn.bcebos.com/pic/3bf33a87e950352ac65cae81db13ecf2b21192131da3?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080" alt="Chem-is-Try Logo" width="33%">
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.8+-green.svg)
+![Framework](https://img.shields.io/badge/Framework-MediaPipe_|_YOLO-orange.svg)
 
-欢迎来到 **Chem-is-Try**，一个致力于下一代化学实验室解决方案的项目！🚀🔬
+> Intelligent Chemical Experiment Operation Detection System Based on Computer Vision
 
-## 项目简介
+## 📖 Project Introduction
 
-Chem-is-Try 是一个开源项目，旨在通过创新的技术和工具，使化学实验室的工作更加高效和有趣。我们希望通过这个项目，激发更多人对化学的兴趣，并推动化学研究的进步。
+Chem-is-Try is an intelligent chemical experiment assistance system based on Orange Pi (RK3588), implementing real-time monitoring and recognition of experimental operations through computer vision technology. The system can accurately identify laboratory equipment and detect operational actions, providing intelligent assistance for chemical experiments.
 
-## 特性
+### ✨ Core Features
 
-- **智能化实验管理**：自动记录实验数据，生成实验报告。
-- **虚拟实验助手**：提供实验指导和实时反馈。
-- **社区支持**：与全球化学爱好者分享和交流实验心得。
+- 🔍 Laboratory Equipment Instance Segmentation (YOLO11-seg)
+- 👋 Precise Hand Action Recognition (MediaPipe)
+- ⚡ Multi-threaded Parallel Inference Architecture
+- 🎯 Support for Various Operation Detection:
+  - Equipment Grasping Recognition
+  - Liquid Pouring Detection
+  - Titration Operation Monitoring
+  - More operations under development...
 
-## 快速开始
+## 🚀 Quick Start
 
-1. 克隆仓库：
-   ```bash
-   git clone https://github.com/5z2j0y/Chem-is-Try.git
-   ```
+### Requirements
 
-> **注意**: 如果电脑无法安装 mediapipe_model_maker，请在 [Kaggle](https://www.kaggle.com/code/codingbearhsun/chem-is-try/) 上运行object_detection\mediapipe_train.py代码。
+- Orange Pi or other RK3588 development board
+- Python 3.8+
+- USB Camera
 
-*编不下去了 咕咕咕*
+### Installation
+
+1. Clone the project
+```bash
+git clone https://github.com/yourusername/Chem-is-Try.git
+cd Chem-is-Try
+```
+
+2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Usage Examples
+
+```bash
+# Run gesture recognition demo
+python static_gesture.py
+
+# Run grasp detection demo
+python grab_something.py
+
+# Run instance segmentation demo
+python Instance_Segmentation/yolo/yolo_seg.py
+```
+
+## 📁 Project Structure
+
+```
+Chem-is-Try/
+├── datasets/              # Dataset resources
+├── models/               # Pre-trained models
+├── playground/           # Work-in-progress code
+├── process_data/         # Data processing tools
+├── utils/               # Utility functions
+├── voices/              # Voice prompt resources
+├── refrences.old        # Old references(Not used)
+├── requirements.txt     # Project dependencies
+└── README.md           # Project documentation
+
+```
+
+## 🛠️ Technical Implementation
+
+### Equipment Detection
+- Uses YOLO11-seg for precise instance segmentation
+- Supports simultaneous recognition of multiple equipment types
+- Real-time tracking of equipment position and status
+
+### Gesture Recognition
+- Extracts 21 hand landmarks using MediaPipe
+- Real-time hand gesture state analysis
+- Precise action trajectory tracking
+
+### Performance Optimization
+- Uses tflite models for accelerated inference
+
+## 💡 Custom Training
+
+### Data Preparation
+```bash
+# Convert dataset format
+python process_data/coco2yolo.py
+```
+
+### Model Training
+```bash
+# Start training
+python Object_Detection/yolo/yolo_train.py
+```
+
+## 🤝 Contributing
+
+1. Fork this project
+2. Create a new feature branch
+3. Submit your changes
+4. Create a Pull Request
+
+## 📄 License
+
+This project is licensed under the [MIT](LICENSE) License.
+
+## 🙏 Acknowledgments
+
+- [YOLO](https://github.com/ultralytics/yolov5)
+- [MediaPipe](https://mediapipe.dev/)
+
+## 📮 Contact
+
+- Project Lead: [Your Name]
+- Email: your.email@example.com
+- Issues: [GitHub Issues](https://github.com/yourusername/Chem-is-Try/issues)
