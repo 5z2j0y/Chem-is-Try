@@ -21,7 +21,7 @@ options = vision.HandLandmarkerOptions(
 hand_detector = vision.HandLandmarker.create_from_options(options)
 logging.getLogger('ultralytics').setLevel(logging.ERROR)
 # 初始化YOLO模型
-yolo_model = YOLO(r"models\yolo\examples\yolo11s-seg.pt", verbose=False)
+yolo_model = YOLO(r"models\yolo\vessels-seg.pt", verbose=False)
 
 # 创建共享队列
 frame_queue = Queue(maxsize=2)
@@ -31,7 +31,7 @@ seg_result_queue = Queue(maxsize=2)
 def process_hand_detection():
     while True:
         if frame_queue.empty():
-            time.sleep(0.05)
+            time.sleep(0.01)
             continue
             
         frame = frame_queue.get()
@@ -47,7 +47,7 @@ def process_hand_detection():
 def process_segmentation():
     while True:
         if frame_queue.empty():
-            time.sleep(0.05)
+            time.sleep(0.01)
             continue
             
         frame = frame_queue.get()
@@ -86,10 +86,10 @@ def main():
     seg_thread.start()
 
     # 打开摄像头
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     class_names = []
-    with open(r"coco.names", "r", encoding="utf-8") as f:
+    with open(r"models\yolo\vessels.names", "r", encoding="utf-8") as f:
         class_names = [line.strip() for line in f]
 
     while cap.isOpened():

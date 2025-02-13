@@ -48,6 +48,6 @@ def visualize_yolo(images_dir, labels_dir, num_images=20, num_classes=15):
     plt.show()
 
 if __name__ == "__main__":
-    images_dir = r'process_data\test\trash2\valid\images'
-    labels_dir = r'process_data\test\trash2\valid\yolo_labels'
+    images_dir = r'images\rect_not_seperated\yolo_img_txt\yolo_aug_img_txt'
+    labels_dir = images_dir
     visualize_yolo(images_dir, labels_dir)

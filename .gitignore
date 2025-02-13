@@ -6,3 +6,5 @@ temp.py
 runs/
 models/yolo/vessels-seg.pt
 models/mediapipe/vessels.tflite
+test.mp4
+images/
