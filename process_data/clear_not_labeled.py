@@ -26,7 +26,7 @@ def clear_unlabeled_images(directory):
 
 if __name__ == "__main__":
     # 指定要处理的目录路径
-    target_directory = r"images\rect_not_seperated"
+    target_directory = r"images\low_quality_rect\origin_img"
     
     if os.path.exists(target_directory):
         print(f"开始处理目录: {target_directory}")

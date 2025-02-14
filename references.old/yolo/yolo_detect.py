@@ -4,7 +4,6 @@ import random
 
 # 加载模型
 model = YOLO(r"models\yolo\examples\vessels-seg.pt", verbose=False) 
-# model = YOLO("path/to/best.pt")  # 加载自定义训练模型
 
 # 定义一个函数来生成随机颜色
 def get_random_color():
